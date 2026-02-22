@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import heroBg from "@/assets/hero-bg.jpg";
 import serviceAgriculture from "@/assets/service-agriculture.jpg";
 import serviceForestry from "@/assets/service-forestry.jpg";
@@ -6,6 +7,39 @@ import serviceGis from "@/assets/service-gis.jpg";
 import serviceCarbon from "@/assets/service-carbon.jpg";
 import servicePlastic from "@/assets/service-plastic.jpg";
 import serviceWaste from "@/assets/service-waste.jpg";
+
+const AnimatedCounter = ({ target, suffix = "", decimals = 0 }: { target: number; suffix?: string; decimals?: number }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const duration = 1800;
+          const startTime = performance.now();
+          const animate = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(parseFloat((eased * target).toFixed(decimals)));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target, decimals]);
+
+  const formatted = decimals > 0 ? count.toFixed(decimals) : count.toLocaleString();
+
+  return <span ref={ref}>{formatted}{suffix}</span>;
+};
 
 const services = [
   {
@@ -65,6 +99,30 @@ const Index = () => {
           <p className="animate-fade-in-delay-2 text-primary-foreground/75 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Structured climate solutions built on verified methodologies, robust governance frameworks, and integrated environmental and social safeguards.
           </p>
+
+          {/* Metrics Strip */}
+          <div className="animate-fade-in-delay-3 mt-14 flex items-center justify-center gap-0">
+            <div className="flex-1 max-w-[200px] text-center">
+              <div className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground">
+                <AnimatedCounter target={35000} />
+              </div>
+              <div className="text-primary-foreground/60 text-sm mt-1">Hectares</div>
+            </div>
+            <div className="w-px h-14 bg-primary-foreground/20" />
+            <div className="flex-1 max-w-[200px] text-center">
+              <div className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground">
+                <AnimatedCounter target={13000} />
+              </div>
+              <div className="text-primary-foreground/60 text-sm mt-1">Farmers</div>
+            </div>
+            <div className="w-px h-14 bg-primary-foreground/20" />
+            <div className="flex-1 max-w-[240px] text-center">
+              <div className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground">
+                <AnimatedCounter target={4.79} decimals={2} suffix=" Million" />
+              </div>
+              <div className="text-primary-foreground/60 text-sm mt-1">tCO₂e (40-Year Period)</div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -76,7 +134,7 @@ const Index = () => {
               <Link
                 key={service.title}
                 to="/our-expertise"
-                className="group block border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="group block border border-border bg-card overflow-hidden transition-all duration-250 hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="overflow-hidden h-48">
                   <img

@@ -38,8 +38,8 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
         className="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4"
       >
         <div>
-          <h3 className="font-serif text-xl font-bold text-primary">{member.name}</h3>
-          <p className="text-muted-foreground text-sm font-medium mt-1">{member.title}</p>
+          <h3 className="font-serif text-2xl font-bold text-primary">{member.name}</h3>
+          <p className="text-muted-foreground text-sm mt-1.5">{member.title}</p>
         </div>
         <ChevronDown
           className={`h-5 w-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
@@ -49,12 +49,15 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
         className={`overflow-hidden transition-all duration-500 ease-in-out ${expanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}
       >
         <div className="px-6 md:px-8 pb-8">
-          <div className="border-t border-border pt-6 space-y-3">
-            {member.bio.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="text-foreground leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
+          <div className="border-t border-border pt-6 flex gap-5">
+            <div className="w-0.5 bg-primary/30 flex-shrink-0 rounded-full" />
+            <div className="space-y-4">
+              {member.bio.split("\n\n").map((paragraph, i) => (
+                <p key={i} className="text-foreground leading-[1.85]">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -64,21 +67,21 @@ const TeamCard = ({ member }: { member: TeamMember }) => {
 
 const OurTeam = () => {
   return (
-    <div className="py-16 px-6">
-      <div className="container mx-auto max-w-4xl">
-        <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-6">Our Team</h1>
-        <p className="text-foreground leading-relaxed mb-4">
+    <div className="py-20 px-6">
+      <div className="container mx-auto max-w-[850px]">
+        <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-8">Our Team</h1>
+        <p className="text-foreground leading-[1.85] mb-6">
           We are dedicated to building a sustainable future by combining technological innovation with deep environmental expertise to deliver end-to-end solutions that support responsible growth and meaningful climate action.
         </p>
 
-        <h2 className="font-serif text-2xl font-bold text-primary mb-4 mt-12 pb-3 border-b-2 border-primary">
+        <h2 className="font-serif text-2xl font-bold text-primary mb-4 mt-14 pb-3 border-b-2 border-primary">
           Our Leadership Team
         </h2>
-        <p className="text-foreground leading-relaxed mb-10">
+        <p className="text-foreground leading-[1.85] mb-10">
           At Pavsho Enviro Services, our leadership team brings together vision, scientific expertise, and operational excellence. The team combines strengths across environmental science, forestry, carbon project development, geospatial intelligence, governance, finance, and organizational leadership to deliver high-integrity, standards-aligned carbon solutions.
         </p>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {team.map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}

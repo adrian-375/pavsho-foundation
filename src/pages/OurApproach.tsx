@@ -31,9 +31,9 @@ const OurApproach = () => {
   }, []);
 
   return (
-    <div className="py-16 px-6">
-      <div className="container mx-auto max-w-5xl">
-        <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-6">Our Approach</h1>
+    <div className="py-20 px-6">
+      <div className="container mx-auto max-w-[850px]">
+        <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-8">Our Approach</h1>
 
         <div
           ref={ref}
@@ -56,7 +56,7 @@ const OurApproach = () => {
                 </svg>
               </div>
               <h3 className="font-serif text-lg font-bold text-primary mb-3">{pillar.title}</h3>
-              <p className="text-foreground leading-relaxed text-sm">{pillar.description}</p>
+              <p className="text-foreground leading-[1.85] text-sm">{pillar.description}</p>
             </div>
           ))}
         </div>
