@@ -26,6 +26,7 @@ const Navbar = () => {
   const location = useLocation();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,8 +44,20 @@ const Navbar = () => {
     setOpenDropdown(null);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-background border-b border-border sticky top-0 z-50">
+    <nav
+      className={`sticky top-0 z-50 border-b border-border transition-all duration-300 ${
+        scrolled
+          ? "bg-background/90 backdrop-blur-md shadow-sm"
+          : "bg-background"
+      }`}
+    >
       <div className="container mx-auto px-6">
         {/* Mobile toggle */}
         <div className="flex items-center justify-between lg:hidden py-3">
