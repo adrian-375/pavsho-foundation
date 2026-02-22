@@ -4,13 +4,13 @@ const AboutUs = () => {
       <div className="container mx-auto max-w-4xl">
         <h1 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-6">About Us</h1>
         <p className="text-foreground leading-relaxed mb-4">
-          Pavsho Enviro Services is a professional climate and sustainability consultancy specialising in the design, development, and long-term management of high-integrity AFOLU carbon projects.
+          Pavsho Enviro Services is a professional climate and sustainability consultancy specialising in the design, development, and long-term management of high-integrity environmental asset projects. Our expertise spans AFOLU (Agriculture, Forestry and Other Land Use) carbon initiatives, plastic waste collection and recycling programmes, and integrated waste management solutions, delivering measurable climate and environmental impact across diverse landscapes and communities.
         </p>
         <p className="text-foreground leading-relaxed mb-4">
-          Aligned with internationally recognised standards including VCS, CCB Gold, and SD VISta, the company delivers structured climate solutions supported by verified methodologies, strong governance systems, and embedded environmental and social safeguards.
+          We work in alignment with leading international carbon and environmental standards and registries, applying approved methodologies, transparent monitoring systems, and rigorous governance frameworks. Every project is structured to meet global best practices in environmental integrity, social safeguards, and compliance, ensuring credibility and long-term value for stakeholders and investors.
         </p>
         <p className="text-foreground leading-relaxed">
-          Our approach combines scientific rigour with operational discipline to ensure that every project delivers measurable climate benefits, meaningful community outcomes, and verifiable biodiversity impact.
+          Our approach combines scientific rigour with operational discipline. From baseline assessments and project structuring to monitoring, reporting, and verification (MRV), we embed strong environmental and social safeguards within each initiative. This ensures that our projects deliver measurable climate mitigation, meaningful community benefits, circular economy outcomes, and verifiable biodiversity impact—while maintaining the highest standards of accountability and transparency.
         </p>
       </div>
     </div>

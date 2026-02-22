@@ -16,24 +16,24 @@ const OurTeam = () => {
       bio: "Ms. Thrupthy Chondama serves as Senior Manager of Operations (AFOLU). She holds a Master's degree in Forestry and brings strong expertise in forestry, SALM, and ARR project implementation.\n\nHer academic foundation and field-level execution experience support efficient management of complex land-based climate initiatives aligned with recognised carbon standards.",
     },
     {
-      name: "Mr. Srikanth",
-      title: "Lead, Geospatial Intelligence",
-      bio: "Mr. Srikanth leads Geospatial Intelligence and digital monitoring systems at Pavsho Enviro Services. With advanced expertise in Remote Sensing and GIS, he specializes in land use and land cover analysis, baselining, monitoring, and long-term verification for AFOLU projects.\n\nHe integrates geospatial analytics with digital MRV systems to strengthen transparency, accuracy, and accountability across carbon initiatives.",
+      name: "Ms. Shoba Rathna",
+      title: "Director",
+      bio: "",
+    },
+    {
+      name: "Mr. Srikanth GCS",
+      title: "Head – Climate, Community & Biodiversity | Geospatial Intelligence",
+      bio: "",
+    },
+    {
+      name: "Mr. Uday Raksogi",
+      title: "Lead – Finance",
+      bio: "",
     },
     {
       name: "Mr. Steven",
       title: "Lead, Climate, Community & Biodiversity",
       bio: "Mr. Steven leads Climate, Community & Biodiversity integration across Pavsho Enviro Services projects. He supports integration of CCB principles into ARR, IFM, REDD/REDD+, grassland protection, mangrove restoration, and SALM initiatives.\n\nHis expertise ensures measurable environmental and social co-benefits while maintaining alignment with international safeguard requirements.",
-    },
-    {
-      name: "Ms. Shobha R",
-      title: "Human Resources Manager",
-      bio: "Ms. Shobha R serves as Human Resources Manager, bringing over five years of experience in talent management and organizational development. She supports workforce development, operational alignment, and internal governance to ensure a capable and purpose-driven team.",
-    },
-    {
-      name: "Mr. Uday R",
-      title: "Lead, Finance",
-      bio: "Mr. Uday R oversees financial strategy, compliance, and project financial structuring. With expertise in budgeting, financial modeling, and risk oversight, he ensures a stable and transparent financial foundation for long-term carbon project delivery.",
     },
   ];
 
@@ -63,7 +63,7 @@ const OurTeam = () => {
               <div className="flex-1">
                 <h3 className="font-serif text-lg font-bold text-primary">{member.name}</h3>
                 <p className="text-muted-foreground text-sm font-medium mb-3">{member.title}</p>
-                {member.bio.split("\n\n").map((paragraph, i) => (
+                {member.bio && member.bio.split("\n\n").map((paragraph, i) => (
                   <p key={i} className="text-foreground leading-relaxed mb-2">
                     {paragraph}
                   </p>
