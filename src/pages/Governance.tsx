@@ -219,13 +219,6 @@ const Governance = () => {
             <p>
               All climate and carbon-related claims are based on verified outcomes and conservative assumptions to prevent overstatement or misrepresentation.
             </p>
-            <div className="mt-6 pt-4 border-t border-border text-sm text-muted-foreground">
-              <p><strong className="text-foreground">Approved by:</strong> Chief Executive Officer</p>
-              <p><strong className="text-foreground">Approved on:</strong> 01 June 2025</p>
-              <p className="mt-2 italic">
-                This statement is reviewed periodically to remain aligned with evolving international standards and market integrity expectations.
-              </p>
-            </div>
           </div>
         </section>
       </div>

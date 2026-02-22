@@ -49,13 +49,10 @@ const Index = () => {
         <div className="absolute inset-0 bg-forest-dark/75" />
         <div className="relative z-10 text-center px-6 py-20 max-w-4xl mx-auto">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            Pavsho Enviro Services
+            High-integrity AFOLU carbon projects designed in alignment with leading international carbon standards and registries.
           </h1>
-          <p className="text-primary-foreground/90 text-lg md:text-xl leading-relaxed mb-4">
-            High-Integrity AFOLU Carbon Projects aligned with VCS, CCB Gold and SD VISta standards.
-          </p>
-          <p className="text-primary-foreground/75 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
-            Structured climate solutions supported by verified methodologies, strong governance systems, and embedded environmental and social safeguards.
+          <p className="text-primary-foreground/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+            Structured climate solutions built on verified methodologies, robust governance frameworks, and integrated environmental and social safeguards.
           </p>
         </div>
       </section>
