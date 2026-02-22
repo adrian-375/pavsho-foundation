@@ -14,10 +14,11 @@ import OngoingProjects from "./pages/OngoingProjects";
 import OurTeam from "./pages/OurTeam";
 import ContactUs from "./pages/ContactUs";
 import {
-  WetlandRestoration,
+  CarbonAssetDevelopment,
   SustainableAgriculturePage,
   SustainableForestryPage,
-  ClimateCommunityBiodiversity,
+  PlasticWasteRecycling,
+  IntegratedWasteManagement,
   GISRemoteSensing,
 } from "./pages/ExpertiseSubPages";
 import NotFound from "./pages/NotFound";
@@ -41,10 +42,11 @@ const App = () => (
             <Route path="/ongoing-projects" element={<OngoingProjects />} />
             <Route path="/our-team" element={<OurTeam />} />
             <Route path="/contact" element={<ContactUs />} />
-            <Route path="/expertise/wetland-restoration" element={<WetlandRestoration />} />
+            <Route path="/expertise/carbon-asset-development" element={<CarbonAssetDevelopment />} />
             <Route path="/expertise/sustainable-agriculture" element={<SustainableAgriculturePage />} />
             <Route path="/expertise/sustainable-forestry" element={<SustainableForestryPage />} />
-            <Route path="/expertise/climate-community-biodiversity" element={<ClimateCommunityBiodiversity />} />
+            <Route path="/expertise/plastic-waste-recycling" element={<PlasticWasteRecycling />} />
+            <Route path="/expertise/integrated-waste-management" element={<IntegratedWasteManagement />} />
             <Route path="/expertise/gis-remote-sensing" element={<GISRemoteSensing />} />
           </Route>
           <Route path="*" element={<NotFound />} />

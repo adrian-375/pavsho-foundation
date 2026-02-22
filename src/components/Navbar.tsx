@@ -2,11 +2,12 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const expertiseDropdown = [
-  { label: "Wetland Restoration and Conservation", path: "/expertise/wetland-restoration" },
+  { label: "Carbon Asset Development and Fund Management", path: "/expertise/carbon-asset-development" },
   { label: "Sustainable Agriculture", path: "/expertise/sustainable-agriculture" },
-  { label: "Sustainable Forestry", path: "/expertise/sustainable-forestry" },
-  { label: "Climate, Community and Biodiversity", path: "/expertise/climate-community-biodiversity" },
-  { label: "GIS & Remote Sensing", path: "/expertise/gis-remote-sensing" },
+  { label: "Sustainable Forestry and Land Use", path: "/expertise/sustainable-forestry" },
+  { label: "Plastic Waste Collection and Recycling", path: "/expertise/plastic-waste-recycling" },
+  { label: "Integrated Waste Management", path: "/expertise/integrated-waste-management" },
+  { label: "GIS and Remote Sensing", path: "/expertise/gis-remote-sensing" },
 ];
 
 const navItems = [
@@ -86,7 +87,7 @@ const Navbar = () => {
                     </svg>
                   </Link>
                   {openDropdown === item.path && (
-                    <div className="absolute left-0 top-full bg-background border border-border shadow-lg min-w-[280px] z-50">
+                    <div className="absolute left-0 top-full bg-background border border-border shadow-lg min-w-[320px] z-50">
                       {item.dropdown.map((sub) => (
                         <Link
                           key={sub.path}

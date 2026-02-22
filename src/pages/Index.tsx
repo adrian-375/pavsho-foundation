@@ -4,33 +4,39 @@ import serviceAgriculture from "@/assets/service-agriculture.jpg";
 import serviceForestry from "@/assets/service-forestry.jpg";
 import serviceGis from "@/assets/service-gis.jpg";
 import serviceCarbon from "@/assets/service-carbon.jpg";
-import serviceCcb from "@/assets/service-ccb.jpg";
+import servicePlastic from "@/assets/service-plastic.jpg";
+import serviceWaste from "@/assets/service-waste.jpg";
 
 const services = [
   {
-    title: "Sustainable Agriculture",
-    description: "Pavsho Enviro Services supports climate-smart agricultural systems through sustainable land-use planning, regenerative practices, and structured implementation approaches that enhance productivity while reducing environmental impact.",
-    image: serviceAgriculture,
-  },
-  {
-    title: "Sustainable Forestry",
-    description: "The company delivers responsible forest management and restoration initiatives designed to increase carbon storage, protect biodiversity, and strengthen long-term ecosystem resilience.",
-    image: serviceForestry,
-  },
-  {
-    title: "GIS & Remote Sensing",
-    description: "Advanced geospatial technologies are applied for land monitoring, deforestation tracking, baseline development, and data-driven verification to support transparent AFOLU project implementation.",
-    image: serviceGis,
-  },
-  {
-    title: "AFOLU Carbon Project Development",
-    description: "Pavsho Enviro Services develops high-integrity AFOLU carbon projects aligned with recognised international standards, supporting feasibility assessment, design, validation, monitoring, and long-term credit issuance.",
+    title: "Carbon Asset Development & Fund Management",
+    description: "We support the end-to-end development, structuring, and management of environmental asset projects aligned with leading international standards and registries. Our services enable the generation, validation, issuance, and monetisation of high-integrity carbon and environmental credits, supported by strong governance, transparent MRV systems, and market-aligned risk management frameworks.",
     image: serviceCarbon,
   },
   {
-    title: "Climate, Community & Biodiversity Integration",
-    description: "Projects are structured to integrate climate mitigation outcomes with measurable community benefits and biodiversity safeguards, ensuring alignment with recognised environmental and social standards.",
-    image: serviceCcb,
+    title: "Sustainable Agriculture",
+    description: "We guide the implementation of climate-smart agricultural systems that enhance productivity while reducing environmental impact. Our expertise includes agroforestry systems, crop diversification and regenerative agriculture, Sustainable Agricultural Land Management (SALM), and soil organic carbon enhancement programmes.",
+    image: serviceAgriculture,
+  },
+  {
+    title: "Sustainable Forestry & Land Use",
+    description: "We provide consultancy and implementation support across key forestry and ecosystem restoration interventions, including ARR, ALM, IFM, REDD+, ACoGS, and WRC. These initiatives strengthen carbon sequestration, restore ecosystems, enhance biodiversity, and build long-term land resilience.",
+    image: serviceForestry,
+  },
+  {
+    title: "Plastic Waste Collection & Recycling",
+    description: "We design and support structured plastic waste recovery programmes that reduce environmental leakage and promote circular economy outcomes. Our services include baseline waste assessments, community-based collection systems, traceability frameworks, and recycling value chain integration.",
+    image: servicePlastic,
+  },
+  {
+    title: "Integrated Waste Management",
+    description: "We provide technical advisory and project structuring services for sustainable waste management systems, including municipal solid waste frameworks, waste segregation strategies, organic waste treatment, and emission reduction initiatives within waste streams.",
+    image: serviceWaste,
+  },
+  {
+    title: "GIS & Remote Sensing",
+    description: "We apply advanced geospatial technologies to enable transparent and data-driven project implementation. Our capabilities include land-use monitoring, soil and carbon stock assessment, deforestation tracking, and satellite-based monitoring for compliance and verification.",
+    image: serviceGis,
   },
 ];
 
@@ -39,19 +45,24 @@ const Index = () => {
     <div>
       {/* Hero Section */}
       <section
-        className="relative flex items-center justify-center min-h-[70vh]"
+        className="relative flex items-center justify-center min-h-[75vh]"
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-forest-dark/75" />
-        <div className="relative z-10 text-center px-6 py-20 max-w-4xl mx-auto">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            High-integrity AFOLU carbon projects designed in alignment with leading international carbon standards and registries.
+        <div className="absolute inset-0 bg-forest-dark/80" />
+        <div className="relative z-10 text-center px-6 py-24 max-w-4xl mx-auto">
+          <h1 className="animate-fade-in font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-8 tracking-tight leading-[1.1]">
+            <span className="bg-gradient-to-r from-primary-foreground via-primary-foreground/90 to-primary-foreground/70 bg-clip-text">
+              Pavsho Enviro Services
+            </span>
           </h1>
-          <p className="text-primary-foreground/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+          <p className="animate-fade-in-delay-1 text-primary-foreground/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-4">
+            High-integrity AFOLU carbon projects designed in alignment with leading international carbon standards and registries.
+          </p>
+          <p className="animate-fade-in-delay-2 text-primary-foreground/75 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Structured climate solutions built on verified methodologies, robust governance frameworks, and integrated environmental and social safeguards.
           </p>
         </div>
@@ -60,12 +71,12 @@ const Index = () => {
       {/* Services Preview Section */}
       <section className="py-16 px-6 bg-background">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
               <Link
                 key={service.title}
                 to="/our-expertise"
-                className="group block border border-border bg-card overflow-hidden transition-shadow hover:shadow-lg"
+                className="group block border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 <div className="overflow-hidden h-48">
                   <img
@@ -74,7 +85,7 @@ const Index = () => {
                     className="w-full h-full object-cover grayscale-hover"
                   />
                 </div>
-                <div className="p-4">
+                <div className="p-5">
                   <h3 className="font-serif text-sm font-semibold text-primary mb-2 leading-snug">
                     {service.title}
                   </h3>

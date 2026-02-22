@@ -10,7 +10,7 @@ const AboutUs = () => {
           We work in alignment with leading international carbon and environmental standards and registries, applying approved methodologies, transparent monitoring systems, and rigorous governance frameworks. Every project is structured to meet global best practices in environmental integrity, social safeguards, and compliance, ensuring credibility and long-term value for stakeholders and investors.
         </p>
         <p className="text-foreground leading-relaxed">
-          Our approach combines scientific rigour with operational discipline. From baseline assessments and project structuring to monitoring, reporting, and verification (MRV), we embed strong environmental and social safeguards within each initiative. This ensures that our projects deliver measurable climate mitigation, meaningful community benefits, circular economy outcomes, and verifiable biodiversity impact—while maintaining the highest standards of accountability and transparency.
+          Our approach combines scientific rigour with operational discipline. From baseline assessments and project structuring to monitoring, reporting, and verification MRV, we embed strong environmental and social safeguards within each initiative. This ensures that our projects deliver measurable climate mitigation, meaningful community benefits, circular economy outcomes, and verifiable biodiversity impact while maintaining the highest standards of accountability and transparency.
         </p>
       </div>
     </div>

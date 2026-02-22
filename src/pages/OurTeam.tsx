@@ -1,42 +1,68 @@
-const OurTeam = () => {
-  const team = [
-    {
-      name: "Mr. Adrian Charles",
-      title: "Chief Executive Officer",
-      bio: "Mr. Adrian Charles serves as the Chief Executive Officer of Pavsho Enviro Services. A graduate with distinction in Bachelor of Science in Data Science, he represents a forward-looking generation of leadership that integrates analytical capability with strategic innovation.\n\nWith a strong foundation in data-driven decision-making and technology-enabled solutions, he guides the company toward sustainable growth, global relevance, and structured execution of high-integrity carbon initiatives.",
-    },
-    {
-      name: "Dr. Abhishek M",
-      title: "Chief Sustainability & Carbon Innovation Officer",
-      bio: "Dr. Abhishek M, PhD in Environmental Science, serves as Chief Sustainability & Carbon Innovation Officer at Pavsho Enviro Services. He brings extensive expertise in carbon project design, implementation, business development, and digital monitoring, reporting, and verification systems.\n\nHis experience spans agriculture and forestry initiatives, including mangrove restoration, Sustainable Agricultural Land Management, Climate, Community & Biodiversity projects, and carbon credit structuring.\n\nDr. Abhishek is experienced with major international registries including Verra, Gold Standard, ICR, Global Carbon Council, ART-TREES, Cercarbono, and Plan Vivo, ensuring standards compliance and high-quality carbon outcomes.",
-    },
-    {
-      name: "Ms. Thrupthy Chondama",
-      title: "Senior Manager, Operations (AFOLU)",
-      bio: "Ms. Thrupthy Chondama serves as Senior Manager of Operations (AFOLU). She holds a Master's degree in Forestry and brings strong expertise in forestry, SALM, and ARR project implementation.\n\nHer academic foundation and field-level execution experience support efficient management of complex land-based climate initiatives aligned with recognised carbon standards.",
-    },
-    {
-      name: "Ms. Shoba Rathna",
-      title: "Director",
-      bio: "",
-    },
-    {
-      name: "Mr. Srikanth GCS",
-      title: "Head – Climate, Community & Biodiversity | Geospatial Intelligence",
-      bio: "",
-    },
-    {
-      name: "Mr. Uday Raksogi",
-      title: "Lead – Finance",
-      bio: "",
-    },
-    {
-      name: "Mr. Steven",
-      title: "Lead, Climate, Community & Biodiversity",
-      bio: "Mr. Steven leads Climate, Community & Biodiversity integration across Pavsho Enviro Services projects. He supports integration of CCB principles into ARR, IFM, REDD/REDD+, grassland protection, mangrove restoration, and SALM initiatives.\n\nHis expertise ensures measurable environmental and social co-benefits while maintaining alignment with international safeguard requirements.",
-    },
-  ];
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
+interface TeamMember {
+  name: string;
+  title: string;
+  bio: string;
+}
+
+const team: TeamMember[] = [
+  {
+    name: "Ms. Shoba Rathna",
+    title: "Director",
+    bio: "Ms. Shoba Rathna serves as Director at Pavsho Enviro Services, contributing to the organisation's strategic growth, governance oversight, and operational management. A graduate with distinction in Bachelor of Arts from a reputed institution in India, she brings structured leadership, analytical thinking, and a forward-looking approach to institutional development.\n\nWith over five years of experience in leading and managing professional teams and supporting environmental initiatives, she plays an important role in strengthening organisational systems, stakeholder coordination, and disciplined project execution. Her leadership supports the company's commitment to high-integrity carbon and sustainability initiatives aligned with global environmental standards.\n\nDeeply passionate about nature, wildlife conservation, and sustainable natural resource management, Ms. Rathna advocates for responsible development that balances climate action, biodiversity protection, and community well-being. Her values-driven leadership reinforces the company's focus on integrity, transparency, and long-term ecological impact.",
+  },
+  {
+    name: "Mr. Srikanth GCS",
+    title: "Head, Climate, Community & Biodiversity | Geospatial Intelligence",
+    bio: "Mr. Srikanth GCS holds a Bachelor's degree in Environmental Science and brings over two decades of experience in wildlife conservation, forestry management, pro-poor community development, and natural resource governance. His professional background integrates field-based conservation practice with advanced applications of Remote Sensing and GIS in land-use planning, landscape restoration, and climate mitigation initiatives.\n\nAt Pavsho Enviro Services, he leads Climate, Community & Biodiversity (CCB) integration across the company's environmental portfolio. His expertise spans Agriculture, Forestry and Other Land Use (AFOLU) interventions including mangrove restoration, Sustainable Agricultural Land Management (SALM), Afforestation, Reforestation and Revegetation (ARR), Improved Forest Management (IFM), REDD/REDD+, and grassland conservation. He supports the structuring of high-integrity carbon projects by embedding international safeguard principles and ensuring measurable environmental and social co-benefits.\n\nMr. Srikanth also heads Geospatial Intelligence and Digital Monitoring Systems within the organisation. With advanced proficiency in Remote Sensing and GIS, he specializes in land-use and land-cover analysis, baselining, stratification, spatial modelling, and long-term monitoring and verification for carbon initiatives. By integrating geospatial analytics with digital MRV frameworks, he strengthens transparency, data accuracy, risk management, and accountability across projects.\n\nHis multidisciplinary expertise bridges conservation science, climate finance structuring, and technology-enabled monitoring, reinforcing Pavsho Enviro Services' commitment to credible, high-integrity environmental solutions aligned with global standards.",
+  },
+  {
+    name: "Mr. Uday Raksogi",
+    title: "Lead, Finance",
+    bio: "Mr. Uday Raksogi leads financial strategy and structuring for AFOLU and environmental asset projects at Pavsho Enviro Services. He oversees project financial modelling, carbon revenue forecasting, cost optimisation, and long-term budget planning to ensure financial viability across multi-decade crediting periods.\n\nHis expertise includes investment structuring, cash flow modelling for ARR, IFM, REDD+, SALM, and blue carbon initiatives, as well as risk assessment aligned with buffer allocation, non-permanence considerations, and safeguard compliance requirements. He plays a critical role in aligning project economics with international carbon market expectations and climate finance standards.\n\nMr. Raksogi also ensures regulatory compliance, financial transparency, and disciplined capital deployment across projects. Through structured financial governance and scenario-based modelling, he supports sustainable growth, investor confidence, and the long-term delivery of high-integrity carbon initiatives.",
+  },
+];
+
+const TeamCard = ({ member }: { member: TeamMember }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div
+      className="border border-border bg-card transition-all duration-300 hover:shadow-md"
+      style={{ borderRadius: "var(--radius)" }}
+    >
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full text-left p-6 md:p-8 flex items-center justify-between gap-4"
+      >
+        <div>
+          <h3 className="font-serif text-xl font-bold text-primary">{member.name}</h3>
+          <p className="text-muted-foreground text-sm font-medium mt-1">{member.title}</p>
+        </div>
+        <ChevronDown
+          className={`h-5 w-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+        />
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${expanded ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}
+      >
+        <div className="px-6 md:px-8 pb-8">
+          <div className="border-t border-border pt-6 space-y-3">
+            {member.bio.split("\n\n").map((paragraph, i) => (
+              <p key={i} className="text-foreground leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const OurTeam = () => {
   return (
     <div className="py-16 px-6">
       <div className="container mx-auto max-w-4xl">
@@ -52,24 +78,9 @@ const OurTeam = () => {
           At Pavsho Enviro Services, our leadership team brings together vision, scientific expertise, and operational excellence. The team combines strengths across environmental science, forestry, carbon project development, geospatial intelligence, governance, finance, and organizational leadership to deliver high-integrity, standards-aligned carbon solutions.
         </p>
 
-        <div className="space-y-10">
+        <div className="space-y-4">
           {team.map((member) => (
-            <div key={member.name} className="flex gap-6 items-start">
-              <div className="hidden sm:flex w-20 h-20 rounded-full bg-secondary flex-shrink-0 items-center justify-center">
-                <span className="font-serif text-xl font-bold text-primary">
-                  {member.name.split(" ").pop()?.[0]}
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-serif text-lg font-bold text-primary">{member.name}</h3>
-                <p className="text-muted-foreground text-sm font-medium mb-3">{member.title}</p>
-                {member.bio && member.bio.split("\n\n").map((paragraph, i) => (
-                  <p key={i} className="text-foreground leading-relaxed mb-2">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
+            <TeamCard key={member.name} member={member} />
           ))}
         </div>
       </div>
